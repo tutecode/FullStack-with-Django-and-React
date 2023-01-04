@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import { Link } from 'react-router-dom'
 import loading_dots from 'assets/img/loading-dots.gif'
 import logo_boomslag from 'assets/img/boomslag-black.png'
+import loading_fork from 'assets/img/loading-fork.gif'
 
 function Navbar() {
     return (
@@ -23,7 +24,7 @@ function Navbar() {
                             className="ml-12 relative inline-flex items-center rounded-md border border-transparent bg-yellow-button px-6 py-2 text-l font-bold text-white shadow-sm hover:transition hover:duration-700 hover:ease-in-out hover:bg-black focus:outline-none focus:ring-2 focus:ring-yellow-button focus:ring-offset-2"
                         >
                             Join us!
-                            <img src={loading_dots} className="w-14 h-4 mt-1 ml-4"/>
+                            <img src={loading_fork} className="w-14 h-4 mt-1 ml-4"/>
                         </button>
                     </div>
                 </div>
