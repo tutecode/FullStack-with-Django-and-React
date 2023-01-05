@@ -1,23 +1,3 @@
-import Header from "components/home/Header"
-import Footer from "components/navigation/Footer"
-import Navbar from "components/navigation/Navbar"
-import Layout from "hocs/layouts/Layout"
-
-function Home() {
-    return (
-        <Layout>
-            <Navbar />
-            <div className="pt-28">
-                <Header/>
-            </div>
-            <Footer />
-        </Layout>
-    )
-}
-
-export default Home
-
-
 //import BlogList from "components/home/BlogList"
 //import CTA from "components/home/CTA"
 //import Features from "components/home/Features"
@@ -32,7 +12,7 @@ export default Home
 //import { useEffect } from "react"
 
 
-// function Home(){
+// function Careers(){
 //     useEffect(()=>{
 //         window.scrollTo(0,0)
 //     },[])
@@ -52,4 +32,23 @@ export default Home
 //         </Layout>
 //     )
 // }
-// export default Home
+// export default Careers
+
+
+import Footer from "components/navigation/Footer"
+import Navbar from "components/navigation/Navbar"
+import Layout from "hocs/layouts/Layout"
+
+function Careers() {
+    return (
+        <Layout>
+            <Navbar />
+            <div className="pt-28">
+                Careers
+            </div>
+            <Footer />
+        </Layout>
+    )
+}
+
+export default Careers

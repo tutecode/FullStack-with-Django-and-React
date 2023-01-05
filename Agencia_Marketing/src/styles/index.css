@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* cuando esta la clase active presente del navbar vamos a aplicar un border */ 
+
+.active{
+    @apply border-orange-500
+}
