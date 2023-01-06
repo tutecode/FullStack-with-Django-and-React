@@ -20,15 +20,15 @@ function Navbar() {
                         <img src={logo_boomslag} width={180} height={90} className="" />
                     </Link>
                     <div className="ml-4 mt-2 flex-shrink-0">
-                        <NavLink to='/casos' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Casos</NavLink>
-                        <NavLink to='/servicios' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Servicios</NavLink>
-                        <NavLink to='/nosotros' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Nosotros</NavLink>
-                        <NavLink to='/carreras' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Carreras</NavLink>
-                        <NavLink to='/blog' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Blog</NavLink>
-                        <NavLink to='/contactos' className="text-lg font-medium leading-6 text-gray-900 hover:underline hover:underline-offset-4 mx-4">Contactos</NavLink>
 
+                        <NavLink to='/casos' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Casos</NavLink>
+                        <NavLink to='/servicios' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Servicios</NavLink>
+                        <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Nosotros</NavLink>
+                        <NavLink to='/carreras' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Carreras</NavLink>
+                        <NavLink to='/blog' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Blog</NavLink>
+                        <NavLink to='/contactos' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-white hover:border-yellow-button transition duration-300 ease-in-out mx-4">Contactos</NavLink>
                         <button
-                            to="/contacto"
+                            to="/"
                             className="ml-12 inline-flex items-center rounded-md border border-transparent bg-yellow-button px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-black duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-button focus:ring-offset-2"
                         >
                             Join us!
