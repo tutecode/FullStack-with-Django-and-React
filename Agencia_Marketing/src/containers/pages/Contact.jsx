@@ -1,33 +1,3 @@
-import Header from "components/home/Header"
-import Incentives from "components/home/Incentives"
-import Footer from "components/navigation/Footer"
-import Navbar from "components/navigation/Navbar"
-import UseCases from "components/home/UseCases"
-import Layout from "hocs/layouts/Layout"
-import CTA from "components/home/CTA"
-import LogoCloud from "components/home/LogoCloud"
-import BlogList from "components/home/BlogList"
-
-function Home() {
-    return (
-        <Layout>
-            <Navbar />
-            <div className="pt-28">
-                <Header/>
-                <Incentives/>
-                <UseCases/>
-                <CTA/>
-                <LogoCloud/>
-                <BlogList/>
-            </div>
-            <Footer />
-        </Layout>
-    )
-}
-
-export default Home
-
-
 //import BlogList from "components/home/BlogList"
 //import CTA from "components/home/CTA"
 //import Features from "components/home/Features"
@@ -42,7 +12,7 @@ export default Home
 //import { useEffect } from "react"
 
 
-// function Home(){
+// function Contact(){
 //     useEffect(()=>{
 //         window.scrollTo(0,0)
 //     },[])
@@ -62,4 +32,23 @@ export default Home
 //         </Layout>
 //     )
 // }
-// export default Home
+// export default Contact
+
+
+import Footer from "components/navigation/Footer"
+import Navbar from "components/navigation/Navbar"
+import Layout from "hocs/layouts/Layout"
+
+function Contact() {
+    return (
+        <Layout>
+            <Navbar />
+            <div className="pt-28">
+                Contact
+            </div>
+            <Footer />
+        </Layout>
+    )
+}
+
+export default Contact
