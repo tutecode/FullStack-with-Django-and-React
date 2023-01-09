@@ -83,7 +83,7 @@ function CasesList() {
           itemsToShow={3}
           breakPoints={breakPoints}
           pagination={false}
-          itemPadding={[0, 2]}
+          itemPadding={[0, 48]}
         >
 
           {posts.map((post, index) => (
