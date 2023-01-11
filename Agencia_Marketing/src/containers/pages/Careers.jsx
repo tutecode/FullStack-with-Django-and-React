@@ -1,5 +1,6 @@
 import Features from "components/careers/Features"
 import Header from "components/careers/Header"
+import Helmet_Careers from "components/careers/Helmet"
 import LogoCloud from "components/careers/LogoCloud"
 import PositionsList from "components/careers/PositionsList"
 import Testimonial from "components/careers/Testimonial"
@@ -14,6 +15,7 @@ function Careers() {
     }, [])
     return (
         <Layout>
+            <Helmet_Careers />
             <Navbar />
             <div className="pt-28">
                 <Header />

@@ -20,7 +20,7 @@ const features = [
 export default function Features() {
   return (
     <div className="bg-white">
-      <div className="mx-12 max-w-full py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+      <div className="mx-auto lg:mx-12 max-w-full py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
         <div>
           <h2 className="text-lg font-semibold text-indigo-600">Everything you need</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">All-in-one platform</p>

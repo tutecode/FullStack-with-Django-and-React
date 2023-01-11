@@ -1,6 +1,5 @@
 import { connect } from "react-redux"
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useState, Fragment, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 //import loading_dots from 'assets/img/loading-dots.gif'
@@ -11,21 +10,39 @@ import { DotLoader } from "react-spinners"
 
 const solutions = [
     {
-        name: 'Insights',
+        name: 'Casos',
         description: 'Measure actions your users take',
-        href: '##',
+        href: '/casos',
         icon: IconOne,
     },
     {
-        name: 'Automations',
+        name: 'Servicios',
         description: 'Create your own targeted content',
-        href: '##',
+        href: '/servicios',
         icon: IconTwo,
     },
     {
-        name: 'Reports',
+        name: 'Nosotros',
         description: 'Keep track of your growth',
-        href: '##',
+        href: '/nosotros',
+        icon: IconThree,
+    },
+    {
+        name: 'Carreras',
+        description: 'Keep track of your growth',
+        href: '/carreras',
+        icon: IconThree,
+    },
+    {
+        name: 'Blog',
+        description: 'Keep track of your growth',
+        href: '/blog',
+        icon: IconThree,
+    },
+    {
+        name: 'Contact',
+        description: 'Keep track of your growth',
+        href: '/contactos',
         icon: IconThree,
     },
 ]
@@ -114,9 +131,9 @@ function Navbar() {
                                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                                 <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
                                                     {solutions.map((item) => (
-                                                        <a
+                                                        <Link
                                                             key={item.name}
-                                                            href={item.href}
+                                                            to={item.href}
                                                             className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                                                         >
                                                             <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
@@ -130,7 +147,7 @@ function Navbar() {
                                                                     {item.description}
                                                                 </p>
                                                             </div>
-                                                        </a>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                                 <div className="bg-gray-50 p-4">

@@ -4,21 +4,21 @@ function CaseCard({ data, index }) {
 
     return (
         <Link
-            to="/cases/id"
+            to='/cases/id'
             onMouseEnter={() => {
                 const title_element = document.getElementById(index)
-                title_element.classList.add("text-orange-500")
+                title_element.classList.add('text-orange-500')
                 const img = document.getElementById(data.id)
-                img.classList.add("object-scale-down")
+                img.classList.add('object-scale-down')
             }}
             onMouseLeave={() => {
                 const title_element = document.getElementById(index)
-                title_element.classList.remove("text-orange-500")
+                title_element.classList.remove('text-orange-500')
                 const img = document.getElementById(data.id)
-                img.classList.remove("object-scale-down")
+                img.classList.remove('object-scale-down')
             }}
 
-            className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+            className="flex flex-col overflow-hidden  rounded-lg shadow-lg">
             <div className="flex-shrink-0">
                 <img id={data.id} className="h-96 w-full transition duration-400 ease-in-out object-cover" src={data.imageUrl} alt="" />
             </div>

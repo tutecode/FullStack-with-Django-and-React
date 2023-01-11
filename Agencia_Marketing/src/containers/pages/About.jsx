@@ -2,6 +2,8 @@ import CallToAction from "components/about/CallToAction"
 import Clients from "components/about/Clients"
 import Features from "components/about/Features"
 import Header from "components/about/Header"
+import Helmet_About from "components/about/Helmet"
+//import Helmet from "components/about/Helmet"
 import Images from "components/about/Images"
 import Team from "components/about/Team"
 import TestStats from "components/about/TestStats"
@@ -17,6 +19,7 @@ function About() {
     }, [])
     return (
         <Layout>
+            <Helmet_About/>
             <Navbar />
             <div className="pt-28">
                 <Header />

@@ -1,6 +1,3 @@
-import { Typewriter } from 'react-simple-typewriter'
-import { Link } from 'react-router-dom'
-
 const navigation = {
     solutions: [
         { name: 'Marketing', href: '#' },
@@ -88,7 +85,7 @@ const navigation = {
     ],
 }
 
-export default function Header() {
+function Header() {
     return (
         <main>
             <div className="relative px-6 lg:px-8">
@@ -120,3 +117,5 @@ export default function Header() {
         </main>
     )
 }
+
+export default Header

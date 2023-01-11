@@ -2,7 +2,7 @@ function Testimonial() {
     return (
         <div className="bg-white pt-16 lg:py-24">
             <div className="bg-gray-50 pb-16 lg:relative lg:z-10 lg:pb-0">
-                <div className="lg:mx-12 lg:grid lg:max-w-full lg:grid-cols-3 lg:gap-8 lg:px-8">
+                <div className="mx-auto lg:mx-12 lg:grid lg:max-w-full lg:grid-cols-3 lg:gap-8 lg:px-8">
                     <div className="relative lg:-my-8">
                         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />
                         <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:h-full lg:p-0">

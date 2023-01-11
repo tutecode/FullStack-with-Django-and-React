@@ -1,7 +1,7 @@
 export default function LogoCloud() {
     return (
         <div className="bg-gray-50">
-            <div className=" mx-auto lg:mx-12 pt-24 pb-12">
+            <div className="mx-auto lg:mx-12 pt-24 pb-12">
                 <h3 className="lg:text-5xl text-3xl px-4 font-bold leading-6 text-gray-900">Work with top notch companies
                 </h3>
             </div>

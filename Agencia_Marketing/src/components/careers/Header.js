@@ -2,7 +2,7 @@ export default function Header() {
     return (
         <div className="relative overflow-hidden bg-white">
             <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-                <div className="relative mx-auto max-w-full px-4 sm:static sm:px-6 lg:px-8">
+                <div className="relative mx-auto lg:mx-12 max-w-full px-4 sm:static sm:px-6 lg:px-8">
                     <div className="sm:max-w-xl	">
                         <h1 className="font text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                             Careers at Murkiva
@@ -78,7 +78,6 @@ export default function Header() {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
