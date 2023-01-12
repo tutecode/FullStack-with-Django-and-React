@@ -8,16 +8,11 @@ function Layout({ children }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
-
             {children}
         </motion.div>
     )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ({})
 
-})
-
-export default connect(mapStateToProps, {
-
-})(Layout)
+export default connect(mapStateToProps, {})(Layout)

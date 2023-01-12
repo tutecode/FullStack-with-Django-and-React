@@ -88,7 +88,7 @@ const navigation = {
     ],
 }
 
-function Header() {
+export default function Header() {
     return (
         <main>
             <div className="relative px-6 lg:px-8">
@@ -96,12 +96,12 @@ function Header() {
                     <div>
                         <div>
                             <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-7xl">
-                                Agency for <span> </span>
+                                FORK DAO <span></span>
+                                <div className='inline-flex' style={{color: '#FFC000', fontWeight: 'bold' }}>
                                 <Typewriter
-                                    words={['Dreamers', 'Creators', 'You!']}
+                                    words={['is Web3', 'is Community', 'is Funny']}
                                     loop={0}
                                     cursor
-
                                     cursorStyle='_'
                                     typeSpeed={120}
                                     deleteSpeed={50}
@@ -109,6 +109,7 @@ function Header() {
                                 // onLoopDone={handleDone}
                                 // onType={handleType}
                                 />
+                                </div>
                             </h1>
                             <p className="mt-16 text-2xl max-w-3xl leading-8 text-black ">
                                 Jumpstart today your business with one of our services that range from <span className='lg:text-xl text-md font-medium leading-8 text-gray-700 sm:text-center  transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'>Web Development</Link></span>
@@ -134,5 +135,3 @@ function Header() {
         </main>
     )
 }
-
-export default Header
