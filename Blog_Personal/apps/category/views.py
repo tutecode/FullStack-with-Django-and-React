@@ -35,7 +35,6 @@ class ListCategoriesView(APIView):
                             sub_item['name'] = sub_category.name
                             sub_item['slug'] = sub_category.slug
                             sub_item['views'] = sub_category.views
-
                             item['sub_categories'].append(sub_item)
 
                     result.append(item)

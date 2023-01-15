@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Typewriter } from 'react-simple-typewriter'
 
 function Header() {
-    
+
     return (
         <main>
             <div className="relative px-6 lg:px-8">
