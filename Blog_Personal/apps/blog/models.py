@@ -38,7 +38,7 @@ class Post(models.Model):
     postobjects =       PostObjects()  # custom manager
 
     class Meta:
-        ordering = ('-published',)
+        ordering = ('-published',) # agarra el mas nuevo que se ha creado
 
     def __str__(self):
         return self.title
@@ -46,8 +46,6 @@ class Post(models.Model):
     def get_view_count(self):
         views = ViewCount.objects.filter(post=self).count()
         return views
-
-
 
 class ViewCount(models.Model):
     post = models.ForeignKey(Post, related_name='blogpost_view_count', on_delete=models.CASCADE)

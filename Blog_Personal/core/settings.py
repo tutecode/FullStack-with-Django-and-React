@@ -61,18 +61,22 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 # CKEditor -> https://django-ckeditor.readthedocs.io/en/latest/
 CKEDITOR_CONFIGS = {
+#    'default': {
+#        'toolbar': 'Custom',
+#        'toolbar_Custom': [
+#            ['Bold', 'Italic', 'Underline'],
+#            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+#            ['Link', 'Unlink'],
+#            ['RemoveFormat', 'Source']
+#        ],
+#        'autoParagraph': False
+#    }
     'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ],
+        'toolbar': 'full',
         'autoParagraph': False
     }
 }
-CKEDITOR_UPLOAD_PATH = "/media/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # MIDDLEWARE -> https://docs.djangoproject.com/en/4.1/topics/http/middleware/
 MIDDLEWARE = [
