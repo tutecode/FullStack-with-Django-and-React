@@ -76,6 +76,7 @@ CKEDITOR_CONFIGS = {
         'autoParagraph': False
     }
 }
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # MIDDLEWARE -> https://docs.djangoproject.com/en/4.1/topics/http/middleware/

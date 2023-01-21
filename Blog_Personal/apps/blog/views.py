@@ -7,15 +7,19 @@ from rest_framework.views import APIView
 from .models import Post, ViewCount
 #from .pagination import (LargeSetPagination, MediumSetPagination,
 #                         SmallSetPagination)
-#from .serializers import PostListSerializer, PostSerializer
+from .serializers import PostSerializer
 
 class BlogListView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):
-        if Post.postobjects.all().exists():
-            print('list posts')
-            return Response({'posts': 'test message'}, status=status.HTTP_200_OK)
+        if Post.objects.all().exists():
+
+            #If Post exist return all posts
+            posts = Post.objects.all()
+            serializer = PostSerializer(posts, many=True)
+            return Response({'post': serializer.data}, status=status.HTTP_200_OK)
+
         else:
             return Response({'error': 'No posts found'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -31,6 +35,7 @@ class BlogListView(APIView):
 #
 #            paginator = SmallSetPagination()
 #            results = paginator.paginate_queryset(posts, request)
+             # Remember to serialize data to show as JSON
 #            serializer = PostListSerializer(results, many=True)
 #
 #            return paginator.get_paginated_response({'posts': serializer.data})
