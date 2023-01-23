@@ -4,9 +4,8 @@ from apps.category.serializers import CategorySerializer
 
 class PostSerializer(serializers.ModelSerializer):
     """Convert JSON format"""
-    
-    category=CategorySerializer()
 
+    category=CategorySerializer()
     class Meta: 
         model=Post
         fields=[
@@ -22,18 +21,20 @@ class PostSerializer(serializers.ModelSerializer):
             'category'
         ]
 
-#class PostListSerializer(serializers.ModelSerializer):
-#    category=CategorySerializer()
-#    class Meta: 
-#        model=Post
-#        fields=[
-#            'id',
-#            'title',
-#            'slug',
-#            'thumbnail',
-#            'description',
-#            'time_read',
-#            'published',
-#            'views',
-#            'category'
-#        ]
+class PostListSerializer(serializers.ModelSerializer):
+    """Convert JSON format"""
+
+    category=CategorySerializer()
+    class Meta: 
+        model=Post
+        fields=[
+            'id',
+            'title',
+            'slug',
+            'thumbnail',
+            'description',
+            'time_read',
+            'published',
+            'views',
+            'category'
+        ]
