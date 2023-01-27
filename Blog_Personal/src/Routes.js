@@ -8,26 +8,30 @@ import Careers from 'containers/pages/Careers';
 import Blog from 'containers/pages/Blog';
 import Contact from 'containers/pages/Contact';
 import { AnimatePresence } from 'framer-motion'
+import Category from 'containers/pages/Category';
 
-function AnimatedRoutes(){
+function AnimatedRoutes() {
 
     const location = useLocation()
 
-    return(
+    return (
         <AnimatePresence>
             <Routes location={location} key={location.pathname}>
-                    {/* Error Display */}
-                    <Route path="*" element={<Error404 />} />
+                {/* Error Display */}
+                <Route path="*" element={<Error404 />} />
 
-                    {/* Home Display */}
-                    <Route path="/" element={<Home />} />
-                    <Route path="/casos" element={<Cases />} />
-                    <Route path="/servicios" element={<Services />} />
-                    <Route path="/nosotros" element={<About />} />
-                    <Route path="/carreras" element={<Careers />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/contactos" element={<Contact />} />
-                </Routes>
+                {/* Home Display */}
+                <Route path="/" element={<Home />} />
+                <Route path="/casos" element={<Cases />} />
+                <Route path="/servicios" element={<Services />} />
+                <Route path="/nosotros" element={<About />} />
+                <Route path="/carreras" element={<Careers />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<PostDetail />} />
+                <Route path="/s=:term" element={<Search />} />
+                <Route path="/category/:slug" element={<Category />} />
+                <Route path="/contactos" element={<Contact />} />
+            </Routes>
         </AnimatePresence>
     )
 }
