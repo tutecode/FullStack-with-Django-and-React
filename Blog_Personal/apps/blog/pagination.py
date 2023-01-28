@@ -2,7 +2,7 @@ from rest_framework.pagination import PageNumberPagination
 
 class SmallSetPagination(PageNumberPagination):
     page_query_param = 'p' # http://127.0.0.1:8000/api/blog/list/p=6
-    page_size = 1 # cuanto contenido vamos a mostrar por pagina
+    page_size = 6 # cuanto contenido vamos a mostrar por pagina
     page_size_query_param = 'page_size'
     max_page_size = 6
 
