@@ -22,6 +22,9 @@ from django.conf import settings
 
 # https://docs.djangoproject.com/en/4.1/topics/http/urls/#how-django-processes-a-request
 urlpatterns = [
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+    path('auth/', include('djoser.social.urls')),
 
     path('api/blog/', include('apps.blog.urls')),
     path('api/category/', include('apps.category.urls')),
