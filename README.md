@@ -80,8 +80,10 @@ CSRF_TRUSTED_ORIGINS_DEV='http://localhost:3000'
 CSRF_TRUSTED_ORIGINS_DEPLOY='https://boomslag.com'
 ```
 
-* Migración de base de datos **Windows** > `python .\manage.py migrate`
-* Migración de base de datos **Linux** > `python ./manage.py migrate`
+* Makemigrations > `python ./manage.py makemigrations`
+* Migración de base de datos 
+   * On **Windows** > `python .\manage.py migrate`
+   * On **Linux** > `python ./manage.py migrate`
 * Run Server DJango > `python ./manage.py runserver`
 
 ![](https://i.imgur.com/hGs1bvo.png)
