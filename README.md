@@ -1,4 +1,4 @@
-# Curso Desarrollo FullStack con Django y React | Parte 1
+# Curso Desarrollo FullStack con DJango y React | Parte 1
 
 ### Project:
 
@@ -19,7 +19,7 @@
     * Tailwind:
         * [Responsive Design](https://tailwindcss.com/docs/responsive-design)
         * [Tailwind UI kit](https://tailwinduikit.com/)
-* Project GitHub:
+* Projects from **GitHub**:
     * main [project](https://github.com/apholdings/Desarrollo-Web-FullStack-con-Django-y-React)
         * ekeko [project](https://github.com/llekekoll/fullStack-Django-React/tree/main/1-Agencia_Marketing)
         * berty [project](https://github.com/fberty/Agencia_Marketing)
@@ -31,6 +31,7 @@
     * Python: [Download](https://www.python.org/downloads/)
     * NodeJS: [Download](https://nodejs.org/en/)
     * Git: [Download](https://git-scm.com/downloads)
+    * Google Extension: [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es)
 * Download from Microsoft Store
     * Windows Terminal
     * PowerShell
@@ -53,7 +54,10 @@
 * Move to `Agencia_Marketing` > `cd Agencia_Marketing`
 * If first time:
     * `pip install virtualenv`
-* Create/Install Virtual Env > `python -m virtualenv env`
+* Make Virtual Env > `python -m virtualenv env`
+* Activate `.env` Virtual Environment
+     * on **Linux/Mac** -> `source env/bin/activate`
+     * on **Windows** -> `./env/Scripts/activate`
 * Install libraries from `requirements.txt` >
     * `pip install -r ./requirements.txt`
 * Install packages from `package.json` > `npm install`
@@ -61,7 +65,10 @@
     * duplicate `core/settings.py` (you will use later)
     * delete `/core`
     * delete `manage.py`
-    * Terminal: make project in directory `core` -> `django-admin startproject core .`
+    * **Terminal:**
+        * Make project in directory `core` > `django-admin startproject core .`
+        * Error:
+            * `python -m django startproject core .`
     * From `core/settings.py` copy your **API** after `SECRET_KEY = 'django-insecure-API`
     * **USE `setting.py` old**
     * Make file `core/.env`
@@ -81,7 +88,7 @@ CSRF_TRUSTED_ORIGINS_DEPLOY='https://boomslag.com'
 ```
 
 * Makemigrations > `python ./manage.py makemigrations`
-* Migración de base de datos 
+* Migrate database model
    * On **Windows** > `python .\manage.py migrate`
    * On **Linux** > `python ./manage.py migrate`
 * Run Server DJango > `python ./manage.py runserver`
@@ -544,3 +551,7 @@ Intentar hacer las paginas solos
 Animate transition page
 
 * Install [framer-motion](https://www.npmjs.com/package/framer-motion) > npm i framer-motion
+
+# Curso Desarrollo FullStack con Django y React | Parte 2
+
+**LA SIGUIENTE PARTE PEDIR PERMISOS A TUTE**
