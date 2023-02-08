@@ -9,9 +9,6 @@ import {
   } from '@heroicons/react/24/outline'
 import { NavLink, useLocation } from 'react-router-dom'
 
-
-
-
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
@@ -20,6 +17,7 @@ export default function Sidebar(){
 
     const location = useLocation()
 
+    // ACA ESTABA EL PROBLEMA XD XD XD XD XD XD
     const navigation = [
         { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: location.pathname==='/dashboard' ? true:false },
         { name: 'Blog', href: '/blog', icon: RssIcon, current: location.pathname==='/blog' ? true:false },
