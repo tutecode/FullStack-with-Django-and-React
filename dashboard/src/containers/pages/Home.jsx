@@ -1,16 +1,51 @@
-import { LockClosedIcon } from "@heroicons/react/24/outline"
+import logo_boomslag from 'assets/img/boomslag-black.png'
 import Layout from "hocs/layout/Layout"
 import { connect } from "react-redux"
-import logo_boomslag from 'assets/img/boomslag-black.png'
+import { LockClosedIcon } from '@heroicons/react/20/solid'
+import { useEffect, useState } from "react";
+import { check_authenticated, load_user, login, refresh } from "redux/actions/auth/auth";
+import { Link, Navigate } from "react-router-dom";
 
-//import { LockClosedIcon } from '@heroicons/react/20/solid'
-//import { useEffect, useState } from "react";
-//import { check_authenticated, load_user, login, refresh } from "redux/actions/auth/auth";
-//import { Link, Navigate } from "react-router-dom";
+function Home({
+    login,
+    isAuthenticated,
+    loading,
+    refresh,
+    check_authenticated,
+    load_user,
+}) {
 
+    useEffect(() => {
+        isAuthenticated ? <></> :
+            <>
+                {refresh()}
+                {check_authenticated()}
+                {load_user()}
+            </>
+    }, [])
 
-function Home() {
-    return(
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const {
+        email,
+        password
+    } = formData;
+
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = e => {
+        e.preventDefault();
+        login(email, password)
+    }
+
+    if (isAuthenticated) {
+        return <Navigate to='/dashboard' />
+    }
+
+    return (
         <>
             <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-md space-y-8">
@@ -24,7 +59,7 @@ function Home() {
                             Sign in to your account
                         </h2>
                     </div>
-                    <form className="mt-8 space-y-6" action="#" method="POST">
+                    <form onSubmit={e => { onSubmit(e) }} className="mt-8 space-y-6" action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />
                         <div className="-space-y-px rounded-md shadow-sm">
                             <div>
@@ -34,8 +69,9 @@ function Home() {
                                 <input
                                     id="email-address"
                                     name="email"
+                                    value={email}
+                                    onChange={e => onChange(e)}
                                     type="email"
-                                    autoComplete="email"
                                     required
                                     className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                     placeholder="Email address"
@@ -48,6 +84,8 @@ function Home() {
                                 <input
                                     id="password"
                                     name="password"
+                                    value={password}
+                                    onChange={e => onChange(e)}
                                     type="password"
                                     autoComplete="current-password"
                                     required
@@ -58,7 +96,7 @@ function Home() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                        
+
                             <div className="text-sm">
                                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
                                     Forgot your password?
@@ -84,13 +122,17 @@ function Home() {
     )
 }
 
-const mapStateToProps=state=>({
-
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated,
+    loading: state.auth.loading
 })
 
-export default connect(mapStateToProps,{
-
-}) (Home)
+export default connect(mapStateToProps, {
+    login,
+    refresh,
+    check_authenticated,
+    load_user,
+})(Home)
 
 
 
@@ -118,7 +160,7 @@ export default connect(mapStateToProps,{
 //        password: ''
 //    });
 //
-//    const { 
+//    const {
 //        email,
 //        password
 //    } = formData;
@@ -134,7 +176,7 @@ export default connect(mapStateToProps,{
 //    if(isAuthenticated){
 //        return <Navigate to='/dashboard'/>
 //    }
-//  
+//
 //
 //    return(
 //        <>
