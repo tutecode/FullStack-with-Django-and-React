@@ -124,3 +124,23 @@ class SearchBlogView(APIView):
 
         serializer = PostListSerializer(results, many=True)
         return paginator.get_paginated_response({'filtered_posts': serializer.data})
+
+
+class AuthorBlogListView(APIView):
+    # Vista protegida   
+    permission_classes = (permissions.IsAuthenticated,)
+    def get(self, request, format=None):
+
+        user = self.request.user
+
+        if Post.objects.filter(author=user).exists():
+
+            posts = Post.objects.filter(author=user)
+
+            paginator = SmallSetPagination()
+            results = paginator.paginate_queryset(posts, request)
+            serializer = PostListSerializer(results, many=True)
+
+            return paginator.get_paginated_response({'posts': serializer.data})
+        else:
+            return Response({'error':'No posts found'}, status=status.HTTP_404_NOT_FOUND)
