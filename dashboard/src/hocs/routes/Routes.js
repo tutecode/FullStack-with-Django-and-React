@@ -4,6 +4,8 @@ import Error404 from 'containers/errors/Error404'
 import Home from 'containers/pages/Home'
 import Dashboard from 'containers/pages/blog/Dashboard'
 import Blog from 'containers/pages/blog/Blog'
+import ResetPassword from 'containers/auth/ResetPassword'
+import ResetPasswordConfirm from 'containers/auth/ResetPasswordConfirm'
 
 export default function AnimatedRoutes() {
 
@@ -11,15 +13,17 @@ export default function AnimatedRoutes() {
 
     return (
         //<AnimatePresence>
-            <Routes location={location} key={location.pathname}>
-                {/* Error Display */}
-                <Route path="*" element={<Error404 />} />
+        <Routes location={location} key={location.pathname}>
+            {/* Error Display */}
+            <Route path="*" element={<Error404 />} />
 
-                {/* Home Display */}
-                <Route path="/" element={<Home />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/blog" element={<Blog />} />
-            </Routes>
+            {/* Home Display */}
+            <Route path="/" element={<Home />} />
+            <Route path="/forgot_password" element={<ResetPassword />} />
+            <Route path="/password/reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/blog" element={<Blog />} />
+        </Routes>
         //</AnimatePresence>
     )
 }
