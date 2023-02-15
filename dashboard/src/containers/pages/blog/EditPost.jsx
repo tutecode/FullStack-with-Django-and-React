@@ -43,6 +43,7 @@ function EditPost({
     const [updateTime, setUpdateTime] = useState(false)
     const [content, setContent] = useState('')
 
+    // Process data from form
     const [formData, setFormData] = useState({
         title: '',
         new_slug: '',
@@ -59,6 +60,7 @@ function EditPost({
         time_read,
     } = formData
 
+    // Set data on "formData"
     const onChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
@@ -98,11 +100,12 @@ function EditPost({
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'multipart/form-data',
-                'Authorization': `JWT ${localStorage.getItem('access')}`
+                'Authorization': `JWT ${localStorage.getItem('access')}` // Vista con proteccion de usuario
             }
         };
 
-        const formData = new FormData()
+        // Body
+        const formData = new FormData() // set of key/value pairs representing form fields and their values
         formData.append('title', title)
         formData.append('slug', slug)
         formData.append('new_slug', new_slug)
@@ -111,11 +114,9 @@ function EditPost({
         formData.append('time_read', time_read)
 
         if (thumbnail) {
-
             formData.append('thumbnail', thumbnail, thumbnail.name)
         } else {
             formData.append('thumbnail', '')
-
         }
 
         if (content) {
@@ -126,10 +127,12 @@ function EditPost({
 
         const fetchData = async () => {
             setLoading(true)
+
+            // request
             try {
                 const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/blog/edit`,
-                    formData,
-                    config)
+                            formData,
+                            config)
 
                 if (res.status === 200) {
 

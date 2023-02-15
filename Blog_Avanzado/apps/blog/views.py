@@ -1,12 +1,15 @@
 from apps.category.models import Category
 from django.db.models.query_utils import Q
 from rest_framework import permissions, status
+from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from slugify import slugify
 
 from .models import Post, ViewCount
 from .pagination import (LargeSetPagination, MediumSetPagination,
                          SmallSetPagination)
+from .permissions import AuthorPermission, IsPostAuthorOrReadOnly
 from .serializers import PostListSerializer, PostSerializer
 
 
@@ -144,3 +147,55 @@ class AuthorBlogListView(APIView):
             return paginator.get_paginated_response({'posts': serializer.data})
         else:
             return Response({'error':'No posts found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+class EditBlogPostView(APIView):
+    permission_classes = (IsPostAuthorOrReadOnly, )
+    
+    # Edit images | videos | files
+    parser_classes = [MultiPartParser, FormParser]
+
+    def put(self, request, format=None):
+        user = self.request.user
+
+        data = self.request.data
+        slug = data['slug']
+
+        print(data)
+        
+        post = Post.objects.get(slug=slug)
+
+        if(data['title']):
+            if not (data['title'] == 'undefined'):
+                post.title = data['title']
+                post.save()
+        if(data['new_slug']):
+            if not (data['new_slug'] == 'undefined'):
+                post.slug = slugify(data['new_slug'])
+                post.save()
+        if(data['description']):
+            if not (data['description'] == 'undefined'):
+                post.description = data['description']
+                post.save()
+        if(data['time_read']):
+            if not (data['time_read'] == 'undefined'):
+                post.time_read = data['time_read']
+                post.save()
+        if(data['content']):
+            if not (data['content'] == 'undefined'):
+                post.content = data['content']
+                post.save()
+
+        if(data['category']):
+            if not (data['category'] == 'undefined'):
+                category_id = int(data['category'])
+                category = Category.objects.get(id=category_id)
+                post.category = category
+                post.save()
+
+        if(data['thumbnail']):
+            if not (data['thumbnail'] == 'undefined'):
+                post.thumbnail = data['thumbnail']
+                post.save()
+
+        return Response({'success': 'Post edited'})
