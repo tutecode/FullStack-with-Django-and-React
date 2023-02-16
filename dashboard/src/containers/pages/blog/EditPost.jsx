@@ -138,7 +138,7 @@ function EditPost({
 
                     if (new_slug !== '') {
                         await get_blog(new_slug)
-                        navigate(-1)
+                        navigate(-1) // go back
                     } else {
                         await get_blog(slug)
                     }
@@ -286,7 +286,7 @@ function EditPost({
                 if (res.status === 200) {
                     setOpen(false)
                     if (new_slug !== '') {
-                        await get_blog(new_slug)
+                        await get_blog(new_slug) // new_slug updated
                         navigate(-1)
                     } else {
                         await get_blog(slug)
@@ -390,6 +390,9 @@ function EditPost({
 
 
 
+
+
+
     return (
         <Layout>
             <Helmet>
@@ -455,7 +458,7 @@ function EditPost({
 
                         <div className="mt-5 border-t border-gray-200">
                             <dl className="divide-y divide-gray-200">
-
+                                {/** TITLE */}        
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Title</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -506,7 +509,7 @@ function EditPost({
                                     </dd>
                                 </div>
 
-
+                                {/** SLUG */}  
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Slug</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -557,6 +560,7 @@ function EditPost({
                                     </dd>
                                 </div>
 
+                                {/** THUMBNAIL */}  
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Thumbnail</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -618,7 +622,8 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-
+                                
+                                {/** DESCRIPTION */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Description</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -669,7 +674,8 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-
+                                
+                                {/** CONTENT */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Content</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -758,7 +764,8 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-
+                                
+                                {/** TIME READ */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Time Read</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -809,6 +816,7 @@ function EditPost({
                                     </dd>
                                 </div>
 
+                                {/** CATEGORY */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Category</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -919,8 +927,6 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-
-
                             </dl>
                         </div>
 
