@@ -131,8 +131,8 @@ function EditPost({
             // request
             try {
                 const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/blog/edit`,
-                            formData,
-                            config)
+                    formData,
+                    config)
 
                 if (res.status === 200) {
 
@@ -458,7 +458,7 @@ function EditPost({
 
                         <div className="mt-5 border-t border-gray-200">
                             <dl className="divide-y divide-gray-200">
-                                {/** TITLE */}        
+                                {/** TITLE */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Title</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -509,7 +509,7 @@ function EditPost({
                                     </dd>
                                 </div>
 
-                                {/** SLUG */}  
+                                {/** SLUG */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Slug</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -560,7 +560,7 @@ function EditPost({
                                     </dd>
                                 </div>
 
-                                {/** THUMBNAIL */}  
+                                {/** THUMBNAIL */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Thumbnail</dt>
                                     <dd className="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -622,7 +622,7 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-                                
+
                                 {/** DESCRIPTION */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Description</dt>
@@ -674,7 +674,7 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-                                
+
                                 {/** CONTENT */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Content</dt>
@@ -764,7 +764,7 @@ function EditPost({
                                         }
                                     </dd>
                                 </div>
-                                
+
                                 {/** TIME READ */}
                                 <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
                                     <dt className="text-lg font-medium text-gray-500">Time Read</dt>
