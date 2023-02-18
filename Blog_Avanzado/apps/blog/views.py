@@ -82,10 +82,11 @@ class PostDetailView(APIView):
     # If Post exist, we want a list=filter
 
     def get(self, request, slug, format=None):
-        if Post.postobjects.filter(slug=slug).exists():
+        if Post.objects.filter(slug=slug).exists():
 
             # Get Post
-            post = Post.postobjects.get(slug=slug)
+            post = Post.objects.get(slug=slug)
+
             # Convert to JSON
             serializer = PostSerializer(post)
 
@@ -197,5 +198,52 @@ class EditBlogPostView(APIView):
             if not (data['thumbnail'] == 'undefined'):
                 post.thumbnail = data['thumbnail']
                 post.save()
+
+        return Response({'success': 'Post edited'})
+
+
+class DraftBlogPostView(APIView):
+    permission_classes = (IsPostAuthorOrReadOnly, )
+    def put(self, request, format=None):
+        data = self.request.data
+        slug = data['slug']
+
+        post = Post.objects.get(slug=slug)
+
+        post.status = 'draft'
+        post.save()
+
+        return Response({'success': 'Post edited'})
+
+
+class PublishBlogPostView(APIView):
+    permission_classes = (IsPostAuthorOrReadOnly, )
+    def put(self, request, format=None):
+        data = self.request.data
+        slug = data['slug']
+
+        post = Post.objects.get(slug=slug)
+
+        post.status = 'published'
+        post.save()
+
+        return Response({'success': 'Post edited'})
+
+
+class DeleteBlogPostView(APIView):
+    permission_classes = (IsPostAuthorOrReadOnly, )
+    def delete(self, request, slug, format=None):
+        
+        post = Post.objects.get(slug=slug)
+
+        post.delete()
+
+        return Response({'success': 'Post edited'})
+
+class CreateBlogPostView(APIView):
+    permission_classes = (AuthorPermission, )
+    def post(self, request, format=None):
+        user = self.request.user
+        Post.objects.create(author=user)
 
         return Response({'success': 'Post edited'})

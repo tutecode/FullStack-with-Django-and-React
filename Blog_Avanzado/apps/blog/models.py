@@ -26,32 +26,33 @@ class Post(models.Model):
         ('published', 'Published'),
     )
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True, null=True)
 
-    slug = models.SlugField(max_length=255, unique=True)
-    
+    slug = models.SlugField(max_length=255, unique=True, default=uuid.uuid4)
+
     thumbnail = models.ImageField(
-        upload_to=blog_thumbnail_directory, max_length=500)
-    
+        upload_to=blog_thumbnail_directory, max_length=500, blank=True, null=True)
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    
-    description = models.TextField(max_length=255)
-    
-    content = RichTextField()
-    
-    time_read = models.IntegerField()
-    
+
+    description = models.TextField(max_length=255, blank=True, null=True)
+
+    content = RichTextField(blank=True, null=True)
+
+    time_read = models.IntegerField(blank=True, null=True)
+
     published = models.DateTimeField(default=timezone.now)
     
     views = models.IntegerField(default=0, blank=True)
-    
+
     status = models.CharField(max_length=10, choices=options, default='draft')
-    
+
     # Si borramos la categoria, no borrar Post y vicevsersa
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
-    
+    category = models.ForeignKey(
+        Category, on_delete=models.PROTECT, blank=True, null=True)
+
     objects = models.Manager()  # default manager
-    
+
     postobjects = PostObjects()  # custom manager
 
     class Meta:
@@ -63,6 +64,10 @@ class Post(models.Model):
     def get_view_count(self):
         views = ViewCount.objects.filter(post=self).count()
         return views
+
+    def get_status(self):
+        status = self.status
+        return status
 
 
 class ViewCount(models.Model):

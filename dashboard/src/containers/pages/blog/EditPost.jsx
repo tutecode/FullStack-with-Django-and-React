@@ -43,7 +43,7 @@ function EditPost({
     const [updateTime, setUpdateTime] = useState(false)
     const [content, setContent] = useState('')
 
-    // Process data from form
+    // Process data from "form"
     const [formData, setFormData] = useState({
         title: '',
         new_slug: '',
@@ -67,11 +67,12 @@ function EditPost({
 
     const [loading, setLoading] = useState(false)
     const [showFullContent, setShowFullContent] = useState(false)
-    const [previewImage, setPreviewImage] = useState()
-    const [thumbnail, setThumbnail] = useState(null)
+    const [previewImage, setPreviewImage] = useState() /** from THUMBNAIL */
+    const [thumbnail, setThumbnail] = useState(null) /** from THUMBNAIL */
 
     const navigate = useNavigate()
 
+    /** for THUMBNAIL */
     const fileSelectedHandler = (e) => {
         const file = e.target.files[0]
         let reader = new FileReader();
@@ -99,7 +100,7 @@ function EditPost({
         const config = {
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'multipart/form-data',
+                'Content-Type': 'multipart/form-data', /** for THUMBNAIL */
                 'Authorization': `JWT ${localStorage.getItem('access')}` // Vista con proteccion de usuario
             }
         };
@@ -930,6 +931,7 @@ function EditPost({
                             </dl>
                         </div>
 
+                        {/** OPEN */}                    
                         <Transition.Root show={open} as={Fragment}>
                             <Dialog as="div" className="relative z-10" onClose={setOpen}>
                                 <Transition.Child
@@ -1029,6 +1031,7 @@ function EditPost({
                             </Dialog>
                         </Transition.Root>
 
+                        {/** DELETE */}                     
                         <Transition.Root show={openDelete} as={Fragment}>
                             <Dialog as="div" className="relative z-10" onClose={setOpenDelete}>
                                 <Transition.Child
