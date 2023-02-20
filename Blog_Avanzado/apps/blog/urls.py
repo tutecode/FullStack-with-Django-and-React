@@ -13,7 +13,7 @@ urlpatterns = [
     path('draft', DraftBlogPostView.as_view()),
     path('publish', PublishBlogPostView.as_view()),
     path('delete/<slug>', DeleteBlogPostView.as_view()),
-    # path('create', CreateBlogPostView.as_view()),
+    path('create', CreateBlogPostView.as_view()),
 ]
 
 
