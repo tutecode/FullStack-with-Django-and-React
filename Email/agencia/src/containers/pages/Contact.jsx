@@ -65,6 +65,7 @@ function Contact() {
                 const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/`, formData, config)
                 if (res.status === 200) {
                     setLoading(false);
+                    // Reset formData
                     setFormData({
                         name: '',
                         email: '',

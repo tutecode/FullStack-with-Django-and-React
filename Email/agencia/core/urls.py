@@ -28,6 +28,7 @@ urlpatterns = [
 
     path('api/blog/', include('apps.blog.urls')),
     path('api/category/', include('apps.category.urls')),
+    path('api/contacts/', include('apps.contacts.urls')),
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
