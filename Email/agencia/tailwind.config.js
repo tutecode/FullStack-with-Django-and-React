@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       colors: {
         "yellow-button": '#FFC000'
+      },
+      maxWidth: {
+        '1700': '1700px'
       }
     },
     boxShadow: {

@@ -11,6 +11,8 @@ import { AnimatePresence } from 'framer-motion'
 import Category from 'containers/pages/Category';
 import PostDetail from 'containers/pages/PostDetail';
 import Search from 'containers/pages/Search';
+import OptIn from 'containers/pages/OptIn';
+import OptInCTA from 'containers/pages/OptInCTA';
 
 function AnimatedRoutes() {
 
@@ -33,6 +35,8 @@ function AnimatedRoutes() {
                 <Route path="/s=:term" element={<Search />} />
                 <Route path="/category/:slug" element={<Category />} />
                 <Route path="/contactos" element={<Contact />} />
+                <Route path="/ebook" element={<OptIn />} />
+                <Route path="/ebook/training" element={<OptInCTA />} />
             </Routes>
         </AnimatePresence>
     )

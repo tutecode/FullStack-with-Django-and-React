@@ -256,6 +256,10 @@ CSRF_TRUSTED_ORIGINS = [
 # EMAIL for developer
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
+# ActiveCampaign
+ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
+ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
+
 if not DEBUG:
     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
 
