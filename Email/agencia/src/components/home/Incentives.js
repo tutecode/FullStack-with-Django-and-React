@@ -20,7 +20,7 @@ const incentives = [
 export default function Incentives() {
   return (
     <div className="bg-white">
-      <div className="mx-auto lg:mx-12 max-w-full py-24 sm:px-2 sm:py-32 lg:px-4">
+      <div className="mx-auto  py-24  sm:py-32">
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900">
