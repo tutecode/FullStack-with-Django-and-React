@@ -88,7 +88,7 @@ const navigation = {
 function Header() {
     return (
         <main>
-            <div className="relative px-6 lg:px-8">
+            <div className="relative">
                 <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
                     <div>
                         <div>
@@ -99,7 +99,7 @@ function Header() {
                                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
                                 amet fugiat veniam occaecat fugiat aliqua.
                             </p>
-                            <div className="absolute bottom-0 left-0 flex space-x-6 xl:mx-20 mx-6">
+                            <div className="absolute bottom-0 left-0 flex space-x-6 mx-12">
                                 {navigation.social.map((item) => (
                                     <a key={item.name} href={item.href} className="text-gray-900 hover:text-gray-800">
                                         <span className="sr-only">{item.name}</span>

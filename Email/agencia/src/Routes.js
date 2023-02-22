@@ -13,6 +13,7 @@ import PostDetail from 'containers/pages/PostDetail';
 import Search from 'containers/pages/Search';
 import OptIn from 'containers/pages/OptIn';
 import OptInCTA from 'containers/pages/OptInCTA';
+import Ecommerce from 'containers/pages/cases/Ecommerce';
 
 function AnimatedRoutes() {
 
@@ -27,7 +28,7 @@ function AnimatedRoutes() {
                 {/* Home Display */}
                 <Route path="/" element={<Home />} />
                 <Route path="/casos" element={<Cases />} />
-                {/*<Route path="/casos/ecommerce" element={<Ecommerce />} />*/}
+                <Route path="/casos/ecommerce" element={<Ecommerce />} />
                 <Route path="/servicios" element={<Services />} />       
                 <Route path="/nosotros" element={<About />} />
                 <Route path="/carreras" element={<Careers />} />
