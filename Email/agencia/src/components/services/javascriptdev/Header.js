@@ -96,7 +96,7 @@ export default function Header() {
                     <div>
                         <div>
                             <h1 className="text-4xl font-semibold tracking-tight pb-16 leading-8 sm:text-7xl">
-                                Software Development Services
+                                Javascript Development
                             </h1>
                             <p className="mt-16 text-2xl max-w-3xl leading-8 text-black ">
                                 We love to shake established thought-patterns and create what has never been attempted before. We take seeds and grow jungles

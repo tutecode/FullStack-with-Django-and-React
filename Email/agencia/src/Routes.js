@@ -14,8 +14,9 @@ import Search from 'containers/pages/Search';
 import OptIn from 'containers/pages/OptIn';
 import OptInCTA from 'containers/pages/OptInCTA';
 import Ecommerce from 'containers/pages/cases/Ecommerce';
+import JavascriptDev from 'containers/pages/services/development/JavascriptDev';
 
-function AnimatedRoutes() {
+export default function AnimatedRoutes() {
 
     const location = useLocation()
 
@@ -29,7 +30,8 @@ function AnimatedRoutes() {
                 <Route path="/" element={<Home />} />
                 <Route path="/casos" element={<Cases />} />
                 <Route path="/casos/ecommerce" element={<Ecommerce />} />
-                <Route path="/servicios" element={<Services />} />       
+                <Route path="/servicios" element={<Services />} /> 
+                <Route path="/servicios/javascript" element={<JavascriptDev />} />  
                 <Route path="/nosotros" element={<About />} />
                 <Route path="/carreras" element={<Careers />} />
                 <Route path="/blog" element={<Blog />} />
@@ -43,4 +45,3 @@ function AnimatedRoutes() {
         </AnimatePresence>
     )
 }
-export default AnimatedRoutes
