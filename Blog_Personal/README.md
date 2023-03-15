@@ -950,7 +950,7 @@ Superuser created successfully.
 ![](https://i.imgur.com/s6zk79Z.png)
 
 * Code `core/setting.py` > `DOMAIN=os.environ.get('DOMAIN')`
-* Code `core/.env` > `DOMAIN='localhots:3000'`
+* Code `core/.env` > `DOMAIN='localhost:3000'`
 
 **Postman**
 
